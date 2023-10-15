@@ -1,0 +1,5 @@
+# Ignoruj plik z końcówką .vpp.lck
+*.vpp.lck
+
+# Ignoruj pliki z końcówką .vpp.bak_XXXX
+IOProjekt.vpp.bak_*
