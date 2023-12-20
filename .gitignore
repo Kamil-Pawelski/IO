@@ -3,3 +3,4 @@
 
 # Ignoruj pliki z końcówką .vpp.bak_XXXX
 IOProjekt.vpp.bak_*
+/Kod/WypozyczalniaIO/target/

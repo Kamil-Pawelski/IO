@@ -1,5 +1,6 @@
 package Wypożyczalnia.Model;
 
+import Wypożyczalnia.Fabryka;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -7,36 +8,37 @@ public class Oferta {
 
 	private ArrayList<Film> oferta = new ArrayList<>();
         private Fabryka fabryka;
-	 public ArrayList<Film> getOferta() {
+        
+        
+	public ArrayList<Film> getOferta() {
         return this.oferta;
         }
 
 	public void dodajFilm(String[] data) {
-        if (!sprawdzCzyFilmIstnieje(data)) {
-            Film film = fabryka.utworzFilm(data);
-            oferta.add(film);
-        } else {
-            System.out.println("Film o podanym tytule już istnieje w ofercie.");
-        }
+        if (sprawdzCzyFilmIstnieje(data)) {
+            return;
+        } 
+        
+        Film film = fabryka.utworzFilm(data);
+        oferta.add(film);
         }
 
 	public void usunFilm() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wybierz metodę usunięcia filmu: 1 - po tytule, 2 - po indeksie");
         int wybor = scanner.nextInt();
-        scanner.nextLine(); // Odczytaj nową linię po liczbie całkowitej
-        Film filmDoUsuniecia;
+        scanner.nextLine(); 
+        Film film;
         switch (wybor) {
-            case 1: // Usunięcie filmu po tytule
+            case 1: 
                 System.out.println("Podaj tytuł filmu do usunięcia:");
                 String tytul = scanner.nextLine();
-                filmDoUsuniecia = wyszukajFilm(tytul);
-                if (filmDoUsuniecia != null) {
-                    oferta.remove(filmDoUsuniecia);
-                    System.out.println("Film został usunięty.");
-                } else {
-                    System.out.println("Nie znaleziono filmu o podanym tytule.");
-                }
+                film = wyszukajFilm(tytul);
+                if (film == null) {
+                  return;
+                }  
+                oferta.remove(film);
+                System.out.println("Film został usunięty.");
                 break;
             case 2: 
                 System.out.println("Dostępne filmy:");
@@ -49,8 +51,8 @@ public class Oferta {
                System.out.println("Nieprawidłowy indeks.");
                return; 
                }
-               filmDoUsuniecia = oferta.get(index);
-               oferta.remove(filmDoUsuniecia);
+               film = oferta.get(index);
+               oferta.remove(film);
                System.out.println("Film został usunięty.");
                break;
             default:
@@ -68,16 +70,8 @@ public class Oferta {
         }
         return null;
         }
-
-	public Film podajDaneFilmu() {
-		// TODO - implement Oferta.podajDaneFilmu
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param data
-	 */
+        
+	
 	private boolean sprawdzCzyFilmIstnieje(String[] data) {
         for (Film film : oferta) {
             if (czyToTenSamFilm(film, data)) {
@@ -94,13 +88,7 @@ public class Oferta {
     }
 
 	public Oferta() {
-		// TODO - implement Oferta.Oferta
-		throw new UnsupportedOperationException();
-	}
-
-	public void wybierzFilmDoUsuniecia() {
-		// TODO - implement Oferta.wybierzFilmDoUsuniecia
-		throw new UnsupportedOperationException();
+		
 	}
 
 }

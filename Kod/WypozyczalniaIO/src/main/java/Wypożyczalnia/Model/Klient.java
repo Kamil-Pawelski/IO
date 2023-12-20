@@ -51,4 +51,7 @@ public class Klient extends Uzytkownik {
         koszyk.dodajFilm(film);
     }
 
+    public boolean pozyczFilm(){
+    return koszyk.wywolajPlatnosc();
+    }
 }
