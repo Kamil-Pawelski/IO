@@ -1,0 +1,11 @@
+wypozyczalnia\Model\KartaPlatnicza.class
+wypozyczalnia\Fabryka.class
+wypozyczalnia\Model\Transakcja.class
+wypozyczalnia\Model\Film.class
+wypozyczalnia\Aplikacja.class
+wypozyczalnia\Model\Klient.class
+wypozyczalnia\Model\Oferta.class
+wypozyczalnia\Model\Koszyk.class
+wypozyczalnia\Model\Administrator.class
+wypozyczalnia\Model\KontaUzytkownikow.class
+wypozyczalnia\Model\Uzytkownik.class
