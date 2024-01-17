@@ -8,6 +8,8 @@ package wypozyczalnia;
 
 import wypozyczalnia.Model.*;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Aplikacja {
@@ -87,7 +89,25 @@ public class Aplikacja {
         }
         return "nieudane";
     }
+    
+      public Klient wyszukajKlienta(String nazwaUzytkownika) {
+        Iterator var2 = this.kontaUzytkownikow.wszyscyKlienci.iterator();
 
+        Klient klienT;
+        do {
+            if (!var2.hasNext()) {
+                throw new NoSuchElementException("Klient o nazwie użytkownika '" + nazwaUzytkownika + "' nie został znaleziony.");
+            }
+
+            klienT = (Klient)var2.next();
+        } while(!klienT.getNazwaUzytkownika().equals(nazwaUzytkownika));
+
+        return klienT;
+    }
+
+
+            
+         
     public void adminMenu() {
         Scanner scanner = new Scanner(System.in);
         int wybor;
@@ -155,6 +175,8 @@ public class Aplikacja {
 
     }
 
+    
+    
     public Film przegladajOferte() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Wybierz opcję:");

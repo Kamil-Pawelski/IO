@@ -1,13 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package wypozyczalnia.Model;
 import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Scanner;
-import wypozyczalnia.Fabryka;
+import  wypozyczalnia.Fabryka;
 public class Oferta {
     private ArrayList<Film> oferta = new ArrayList();
     private Fabryka fabryka = new Fabryka();
@@ -17,6 +14,9 @@ public class Oferta {
     }
 
     public void dodajFilm(String[] data) {
+        if(data.length != 5){
+            throw new IllegalArgumentException("Nieprawidłowa liczba argumentów dla filmu.");
+        }
         if (!this.sprawdzCzyFilmIstnieje(data)) {
             Film film = this.fabryka.utworzFilm(data);
             this.oferta.add(film);
@@ -68,6 +68,20 @@ public class Oferta {
         }
 
     }
+    
+    public void usunFilmTytul(String tytul) {
+        
+                Film film;
+                System.out.println("Podaj tytuł filmu do usunięcia:");
+                film = this.wyszukajFilm(tytul);
+                if (film == null) {
+                    return;
+                }
+                this.oferta.remove(film);
+                System.out.println("Film został usunięty.");
+
+    }
+    
 
     public Film wyszukajFilm(String tytul) {
         Iterator var2 = this.oferta.iterator();
@@ -84,7 +98,10 @@ public class Oferta {
         return film;
     }
 
-    private boolean sprawdzCzyFilmIstnieje(String[] data) {
+    public boolean sprawdzCzyFilmIstnieje(String[] data) {
+        if(data.length != 5){
+            throw new IllegalArgumentException("Nieprawidłowa liczba argumentów dla filmu.");
+        }
         Iterator var2 = this.oferta.iterator();
 
         Film film;

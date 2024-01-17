@@ -3,6 +3,7 @@ wypozyczalnia\Fabryka.class
 wypozyczalnia\Model\Transakcja.class
 wypozyczalnia\Model\Film.class
 wypozyczalnia\Aplikacja.class
+wypozyczalnia\Dane.class
 wypozyczalnia\Model\Klient.class
 wypozyczalnia\Model\Oferta.class
 wypozyczalnia\Model\Koszyk.class

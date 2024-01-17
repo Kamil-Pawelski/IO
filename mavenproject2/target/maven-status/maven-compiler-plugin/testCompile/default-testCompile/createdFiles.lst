@@ -1,0 +1,10 @@
+Testy\KlientTest.class
+Suite\WypozyczalniaTestSuiteControl.class
+Testy\testTransakcja.class
+Suite\WypozyczalniaTestSuite.class
+Testy\KoszykTest.class
+Testy\AplikacjaTest.class
+Suite\WypozyczalniaTestSuiteControlClass.class
+Testy\FabrykaTest.class
+Testy\OfertaTest.class
+Suite\WypozyczalniaTestSuiteEntity.class

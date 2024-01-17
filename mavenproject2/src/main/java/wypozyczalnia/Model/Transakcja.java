@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package wypozyczalnia.Model;
-
 public class Transakcja {
     private double cena = Double.MAX_VALUE;
 

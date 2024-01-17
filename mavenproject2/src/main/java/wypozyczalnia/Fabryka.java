@@ -4,7 +4,7 @@
  */
 package wypozyczalnia;
 
-import wypozyczalnia.Model.*;
+import  wypozyczalnia.Model.*;
 public class Fabryka {
     public Film utworzFilm(String[] data) {
         if (data != null && data.length == 5) {

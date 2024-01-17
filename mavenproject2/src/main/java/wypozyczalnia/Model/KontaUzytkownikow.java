@@ -3,12 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package wypozyczalnia.Model;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class KontaUzytkownikow {
-    private ArrayList<Klient> wszyscyKlienci = new ArrayList();
+    public ArrayList<Klient> wszyscyKlienci = new ArrayList();
 
     public KontaUzytkownikow() {
     }

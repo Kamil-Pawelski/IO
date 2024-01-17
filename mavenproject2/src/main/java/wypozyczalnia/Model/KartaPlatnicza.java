@@ -3,7 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package wypozyczalnia.Model;
-
 public class KartaPlatnicza {
     private String numerKarty;
     private String dataWaznosci;
